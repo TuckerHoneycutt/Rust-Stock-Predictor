@@ -1,0 +1,1 @@
+plotters::element::CandleStick<Map<Zip<Zip<Zip<std::slice::Iter<'_, u64>, std::slice::Iter<'_, f64>>, std::slice::Iter<'_, f64>>, std::slice::Iter<'_, f64>>, [closure@main.rs:137:22: 137:49]>, plotters::style::RGBColor>
