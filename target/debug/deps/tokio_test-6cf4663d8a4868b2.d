@@ -1,0 +1,9 @@
+/Users/tuckerhoneycutt/projects/Finance/01-project/target/debug/deps/tokio_test-6cf4663d8a4868b2.rmeta: /Users/tuckerhoneycutt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-test-0.4.3/src/lib.rs /Users/tuckerhoneycutt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-test-0.4.3/src/io.rs /Users/tuckerhoneycutt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-test-0.4.3/src/stream_mock.rs /Users/tuckerhoneycutt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-test-0.4.3/src/macros.rs /Users/tuckerhoneycutt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-test-0.4.3/src/task.rs
+
+/Users/tuckerhoneycutt/projects/Finance/01-project/target/debug/deps/tokio_test-6cf4663d8a4868b2.d: /Users/tuckerhoneycutt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-test-0.4.3/src/lib.rs /Users/tuckerhoneycutt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-test-0.4.3/src/io.rs /Users/tuckerhoneycutt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-test-0.4.3/src/stream_mock.rs /Users/tuckerhoneycutt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-test-0.4.3/src/macros.rs /Users/tuckerhoneycutt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-test-0.4.3/src/task.rs
+
+/Users/tuckerhoneycutt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-test-0.4.3/src/lib.rs:
+/Users/tuckerhoneycutt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-test-0.4.3/src/io.rs:
+/Users/tuckerhoneycutt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-test-0.4.3/src/stream_mock.rs:
+/Users/tuckerhoneycutt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-test-0.4.3/src/macros.rs:
+/Users/tuckerhoneycutt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-test-0.4.3/src/task.rs:

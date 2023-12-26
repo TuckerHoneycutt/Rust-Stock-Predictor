@@ -44,6 +44,12 @@ fn main() {
                 Vec::new()
             });
 
+            // Filter quotes based on the start date
+            let filtered_quotes: Vec<_> = quotes
+                .into_iter()
+                .filter(|quote| quote.timestamp >= start_timestamp)
+                .collect();
+
             // Initialize variables to track current month and year
             let mut current_month = 0;
             let mut current_year = 0;
@@ -52,8 +58,8 @@ fn main() {
             let mut closing_prices = Vec::new();
             let mut timestamps = Vec::new();
 
-            // Iterate through quotes and create tables for each month
-            for quote in quotes.iter() {
+            // Iterate through filtered quotes and create tables for each month
+            for quote in filtered_quotes.iter() {
                 let (quote_month, quote_year) = get_month_and_year(&quote.timestamp);
 
                 // Check if the month has changed
@@ -63,7 +69,7 @@ fn main() {
                     table.add_row(row!["Date", "Open", "High", "Low", "Volume", "Close", "AdjClose"]);
 
                     // Add rows to the table for the current month
-                    for month_quote in quotes.iter().filter(|&q| {
+                    for month_quote in filtered_quotes.iter().filter(|&q| {
                         let (q_month, q_year) = get_month_and_year(&q.timestamp);
                         q_month == quote_month && q_year == quote_year
                     }) {
@@ -116,14 +122,14 @@ fn main() {
             let mut highs = Vec::new();
             let mut lows = Vec::new();
             let mut closes = Vec::new();
-            let mut timestamps_candlestick = Vec::new(); // Rename to avoid duplication
+            let mut timestamps_candlestick = Vec::new();
 
-            for quote in quotes.iter() {
+            for quote in filtered_quotes.iter() {
                 opens.push(quote.open);
                 highs.push(quote.high);
                 lows.push(quote.low);
                 closes.push(quote.close);
-                timestamps_candlestick.push(quote.timestamp); // Rename to avoid duplication
+                timestamps_candlestick.push(quote.timestamp);
             }
 
             // Plot candlestick chart
@@ -206,16 +212,16 @@ fn plot_candlestick_chart(
             })
     )?;
 
-// Format x-axis labels as "YYYY-MM-DD" in local time
-chart.configure_mesh()
-    .x_label_formatter(&|timestamp| {
-        let naive_datetime = NaiveDateTime::from_timestamp(*timestamp as i64, 0);
-        match Local.from_local_datetime(&naive_datetime) {
-            LocalResult::Single(datetime_local) => datetime_local.format("%Y-%m-%d").to_string(),
-            LocalResult::None | LocalResult::Ambiguous(_, _) => String::from("Invalid Date"),
-        }
-    })
-    .x_labels(10) // Set the number of x-axis labels
-    .draw()?;
+    // Format x-axis labels as "YYYY-MM-DD" in local time
+    chart.configure_mesh()
+        .x_label_formatter(&|timestamp| {
+            let naive_datetime = NaiveDateTime::from_timestamp(*timestamp as i64, 0);
+            match Local.from_local_datetime(&naive_datetime) {
+                LocalResult::Single(datetime_local) => datetime_local.format("%Y-%m-%d").to_string(),
+                LocalResult::None | LocalResult::Ambiguous(_, _) => String::from("Invalid Date"),
+            }
+        })
+        .x_labels(10) // Set the number of x-axis labels
+        .draw()?;
     Ok(())
 }
